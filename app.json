@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Streamyfin",
-    "slug": "streamyfin",
+    "slug": "streamyfin-personal",
     "version": "0.39.0",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
@@ -143,17 +143,11 @@
     "extra": {
       "router": {
         "origin": false
-      },
-      "eas": {
-        "projectId": "e79219d1-797f-4fbe-9fa1-cfd360690a68"
       }
     },
-    "owner": "streamyfin",
+    "owner": "anubisreal",
     "runtimeVersion": {
       "policy": "appVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/e79219d1-797f-4fbe-9fa1-cfd360690a68"
     },
     "newArchEnabled": false
   }

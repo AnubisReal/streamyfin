@@ -16,6 +16,10 @@ jobs:
     steps:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+          show-progress: false
 
       - name: 🍞 Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -51,7 +55,7 @@ jobs:
       - name: 🚀 Build iOS IPA
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: eas build -p ios --local --non-interactive --profile development
+        run: eas build -p ios --local --non-interactive --profile development --clear-cache
 
       - name: 📅 Set date tag
         run: echo "DATE_TAG=$(date +%d-%m-%Y_%H-%M-%S)" >> $GITHUB_ENV
@@ -60,5 +64,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: streamyfin-ios-ipa-${{ env.DATE_TAG }}
-          path: ./build/**/*.ipa
+          path: "*.ipa"
           retention-days: 7
