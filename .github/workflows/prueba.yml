@@ -49,6 +49,11 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
           eas-cache: true
 
+      - name: 🔧 Initialize EAS project
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        run: eas init --id --non-interactive
+
       - name: ⚙️ Ensure iOS SDKs installed
         run: xcodebuild -downloadPlatform iOS
 
